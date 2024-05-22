@@ -1,0 +1,18 @@
+for i := 0 ; i<10 ;i++{
+    go func(){
+        print(i) ///baad
+    }()
+}
+
+for i := 0 ; i<10 ;i++{
+    go func(i int){
+        print(i) ///good
+    }(i)
+}
+
+for i := 0 ; i<10 ;i++{
+    b:=i
+    go func(){
+        print(b) ///good
+    }()
+}
